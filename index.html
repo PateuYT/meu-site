@@ -16,7 +16,7 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: #333;
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            background: linear-gradient(135deg, #fff5f5 0%, #ffeaea 100%);
             min-height: 100vh;
             padding: 20px;
         }
@@ -26,10 +26,11 @@
             margin: 40px auto;
             background: white;
             border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 10px 30px rgba(220, 53, 69, 0.15);
             padding: 50px;
             position: relative;
             overflow: hidden;
+            border: 1px solid #ffcccc;
         }
 
         .container::before {
@@ -39,17 +40,18 @@
             left: 0;
             width: 8px;
             height: 100%;
-            background: linear-gradient(to bottom, #1a237e, #283593, #3949ab, #5c6bc0);
+            background: linear-gradient(to bottom, #dc3545, #c82333, #bd2130, #a71d2a);
         }
 
         h1 {
-            color: #1a237e;
+            color: #c82333;
             font-size: 2.8rem;
             margin-bottom: 30px;
             padding-bottom: 15px;
-            border-bottom: 3px solid #e8eaf6;
+            border-bottom: 3px solid #ffe6e6;
             text-align: center;
             position: relative;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
         }
 
         h1::after {
@@ -59,18 +61,22 @@
             right: 20px;
             font-size: 1.2rem;
             font-weight: bold;
-            color: #5c6bc0;
-            background: #e8eaf6;
+            color: #fff;
+            background: #dc3545;
             padding: 5px 15px;
             border-radius: 20px;
+            box-shadow: 0 3px 6px rgba(220, 53, 69, 0.3);
         }
 
         h2 {
-            color: #283593;
+            color: #bd2130;
             font-size: 1.8rem;
             margin: 35px 0 15px 0;
             padding-left: 15px;
-            border-left: 4px solid #3949ab;
+            border-left: 4px solid #dc3545;
+            background: linear-gradient(to right, #fff5f5, transparent);
+            padding: 10px 15px;
+            border-radius: 0 8px 8px 0;
         }
 
         ul {
@@ -86,7 +92,7 @@
 
         li::before {
             content: '•';
-            color: #3949ab;
+            color: #dc3545;
             font-size: 1.5rem;
             position: absolute;
             left: 0;
@@ -94,67 +100,104 @@
         }
 
         .section {
-            background: #f8f9fa;
+            background: #fffafa;
             border-radius: 10px;
             padding: 20px;
             margin-bottom: 25px;
-            border-left: 4px solid #5c6bc0;
-            transition: transform 0.3s ease;
+            border-left: 4px solid #dc3545;
+            border-right: 1px solid #ffe6e6;
+            border-top: 1px solid #ffe6e6;
+            border-bottom: 1px solid #ffe6e6;
+            transition: all 0.3s ease;
         }
 
         .section:hover {
             transform: translateX(5px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 5px 20px rgba(220, 53, 69, 0.1);
+            border-left: 4px solid #a71d2a;
         }
 
         .highlight {
-            background: #e8eaf6;
+            background: #ffe6e6;
             padding: 3px 8px;
             border-radius: 4px;
             font-weight: 600;
-            color: #1a237e;
+            color: #bd2130;
+            border: 1px solid #ffcccc;
         }
 
         .warning {
-            background: #fff3e0;
-            border-left: 4px solid #ff9800;
+            background: #fff3f3;
+            border-left: 4px solid #dc3545;
             padding: 15px;
             border-radius: 8px;
             margin: 20px 0;
+            color: #a71d2a;
+            border: 1px solid #ffcccc;
+        }
+
+        .warning strong {
+            color: #dc3545;
         }
 
         .link-box {
-            background: #1a237e;
+            background: linear-gradient(135deg, #dc3545, #c82333);
             color: white;
             padding: 25px;
             border-radius: 10px;
             text-align: center;
             margin-top: 40px;
-            box-shadow: 0 5px 15px rgba(26, 35, 126, 0.2);
+            box-shadow: 0 5px 15px rgba(220, 53, 69, 0.3);
+            border: 1px solid #ff6666;
+            transition: transform 0.3s ease;
+        }
+
+        .link-box:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(220, 53, 69, 0.4);
         }
 
         .link-box a {
-            color: #bbdefb;
+            color: #ffcccc;
             text-decoration: none;
             font-weight: bold;
             font-size: 1.2rem;
             transition: color 0.3s;
+            display: inline-block;
+            padding: 5px 10px;
+            border-radius: 4px;
         }
 
         .link-box a:hover {
             color: white;
-            text-decoration: underline;
+            background: rgba(255, 255, 255, 0.1);
+            text-decoration: none;
         }
 
         .footer {
             text-align: center;
             margin-top: 40px;
             padding-top: 20px;
-            border-top: 1px solid #e0e0e0;
-            color: #666;
+            border-top: 1px solid #ffe6e6;
+            color: #990000;
             font-size: 0.9rem;
         }
 
+        .footer p {
+            margin: 5px 0;
+        }
+
+        /* Animatie pentru numerele highlight */
+        .highlight {
+            transition: all 0.3s ease;
+        }
+
+        .highlight:hover {
+            background: #ffcccc;
+            transform: scale(1.05);
+        }
+
+        /* Responsiv */
         @media (max-width: 768px) {
             .container {
                 padding: 25px;
@@ -165,9 +208,45 @@
                 font-size: 2.2rem;
             }
             
+            h1::after {
+                position: relative;
+                top: 0;
+                right: 0;
+                display: block;
+                width: fit-content;
+                margin: 10px auto;
+            }
+            
             h2 {
                 font-size: 1.5rem;
             }
+            
+            .link-box {
+                padding: 20px;
+            }
+            
+            .link-box a {
+                font-size: 1rem;
+                word-break: break-all;
+            }
+        }
+
+        /* Scrollbar personalizat */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #ffe6e6;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #dc3545;
+            border-radius: 5px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #c82333;
         }
     </style>
 </head>
@@ -207,16 +286,16 @@
                 <li><span class="highlight">3.4</span> Vânzările neautorizate ale produselor noastre sunt strict interzise, fără asistență oferită în astfel de cazuri.</li>
                 <li><span class="highlight">3.5</span> Partajarea licenței este interzisă și poate duce la blacklist pe program pe calculatorul terței persoane și al proprietarului licenței.</li>
                 <li><span class="highlight">3.6</span> Încercarea de autentificare în conturile altor utilizatori este strict interzisă.</li>
-                <li><span class="highlight">3.7</span> Când un utilizator răscumpără licența unui software, se consideră că serviciul a fost prestat, deoarece actul de răscumpărare a licenței implică faptul că utilizatorul a primit dreptul de utilizare al software-ului. Din momentul în care utilizatorul răscumpără licența, acesta obține acces la software și, prin urmare, serviciul a fost deja finalizat din punctul de vedere al utilizării licenței.</li>
+                <li><span class="highlight">3.7</span> Când un utilizator răscumpără licența unui software, se consideră că serviciul a fost prestat, deoarece actul de răscumpărare a licenței implică faptul că utilizatorul a primit dreptul de utilizare al software-ului.</li>
                 <li><span class="highlight">3.8</span> Utilizatorii prinși modificând sau încercând să modifice comportamentul software-ului vor fi banați imediat și permanent.</li>
-                <li><span class="highlight">3.9</span> Licențele pot fi încheiate de către fondatori în orice moment, fără notificare prealabilă și fără răspundere, fie financiară sau nu.</li>
+                <li><span class="highlight">3.9</span> Licențele pot fi încheiate de către fondatori în orice moment, fără notificare prealabilă.</li>
                 <li><span class="highlight">3.10</span> Abonamentul este valabil pentru perioada achiziționată. Când expiră, utilizatorul este obligat să-l reînnoiască manual.</li>
-                <li><span class="highlight">3.11</span> Acest software a fost dezvoltat și testat pentru a opera exclusiv pe sistemul de operare Windows 10 furnizat de Microsoft. Garantia funcționării complete și asistența tehnică sunt asigurate doar pentru utilizatorii care utilizează software-ul în această versiune a sistemului de operare. Deși poate exista compatibilitate cu alte versiuni de Windows, nu garantăm performanța, stabilitatea sau asistența tehnică adecvată în afara mediului Windows 10. Utilizarea în alte versiuni ale sistemului de operare este responsabilitatea utilizatorului, care își asumă riscurile rezultate din această utilizare.</li>
-                <li><span class="highlight">3.12</span> Nu ne asumăm răspunderea pentru daune directe, indirecte, accidentale, speciale, consecvente sau punitive rezultate din utilizarea sau incapacitatea de a utiliza produsele noastre.</li>
-                <li><span class="highlight">3.13</span> Publicarea imaginii în mijloace de comunicare a software-ului nostru fără solicitare prealabilă poate duce la solicitarea de eliminare a conținutului din mijlocul de comunicare.</li>
-                <li><span class="highlight">3.14</span> Este interzisă decompilarea, efectuarea de inginerie inversă sau orice activitate suspectă asupra programelor, serviciilor sau scripturilor noastre. Acțiuni precum copierea, decompilarea, încercarea de a obține codul sursă, decriptarea sau modificarea sunt strict interzise. Suspiciunile de încălcare vor duce la banare imediată, fără dovezi sau șansă de apel, conform politicii de Anulare a Serviciilor. Aceasta include activități precum sniffing, spionaj, decriptare, decompilare, cracking, supuse unor măsuri riguroase.</li>
-                <li><span class="highlight">3.15</span> Aveți cunoștință că revizuirea acestor termeni poate avea loc în orice moment, fără notificare prealabilă. Prin utilizarea acestor servicii, sunteți de acord să fiți legați de versiunea actuală a acestor Termeni și Condiții de Utilizare.</li>
-                <li><span class="highlight">3.16</span> Serviciile trebuie utilizate în conformitate cu regulile stabilite; nerespectarea poate duce la anularea serviciilor și banarea de pe platformă.</li>
+                <li><span class="highlight">3.11</span> Acest software a fost dezvoltat și testat pentru a opera exclusiv pe Windows 10.</li>
+                <li><span class="highlight">3.12</span> Nu ne asumăm răspunderea pentru daune rezultate din utilizarea produselor noastre.</li>
+                <li><span class="highlight">3.13</span> Publicarea imaginii software-ului nostru fără solicitare poate duce la eliminarea conținutului.</li>
+                <li><span class="highlight">3.14</span> Este interzisă decompilarea, inginerie inversă sau orice activitate suspectă asupra programelor noastre.</li>
+                <li><span class="highlight">3.15</span> Acești termeni pot fi modificați în orice moment, fără notificare prealabilă.</li>
+                <li><span class="highlight">3.16</span> Serviciile trebuie utilizate în conformitate cu regulile stabilite.</li>
             </ul>
         </div>
 
@@ -226,20 +305,21 @@
 
         <div class="link-box">
             <p>Pentru mai multe informații, vizitați:</p>
-            <a href="https://west.example.com/termeni" target="_blank">https://west.example.com/termeni</a>
+            <a href="https://west-romania.com/termeni" target="_blank">https://west-romania.com/termeni</a>
+            <p style="margin-top: 10px; font-size: 0.9rem; opacity: 0.9;">Link oficial West</p>
         </div>
 
         <div class="footer">
-            <p>© 2023 West. Toate drepturile rezervate.</p>
-            <p>Ultima actualizare: Decembrie 2023</p>
+            <p>© 2024 <strong style="color: #dc3545;">WEST</strong>. Toate drepturile rezervate.</p>
+            <p>Ultima actualizare: Ianuarie 2024</p>
+            <p style="margin-top: 10px; font-size: 0.8rem; color: #666;">Acest document este proprietatea West și este protejat de drepturile de autor.</p>
         </div>
     </div>
 
     <script>
-        // Efect de highlighting la scroll
+        // Animatie pentru elementele vizibile
         document.addEventListener('DOMContentLoaded', function() {
             const sections = document.querySelectorAll('.section');
-            
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
@@ -250,20 +330,50 @@
             }, { threshold: 0.1 });
             
             sections.forEach(section => {
-                section.style.opacity = '0.7';
-                section.style.transform = 'translateX(-20px)';
-                section.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                section.style.opacity = '0';
+                section.style.transform = 'translateX(-30px)';
+                section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
                 observer.observe(section);
             });
             
-            // Efect pentru link
+            // Animatie pentru titlu
+            const title = document.querySelector('h1');
+            title.style.opacity = '0';
+            title.style.transform = 'translateY(-20px)';
+            title.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+            
+            setTimeout(() => {
+                title.style.opacity = '1';
+                title.style.transform = 'translateY(0)';
+            }, 300);
+            
+            // Efect de click pe link-box
             const linkBox = document.querySelector('.link-box');
-            linkBox.addEventListener('click', function() {
+            linkBox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') return;
                 this.style.transform = 'scale(0.98)';
                 setTimeout(() => {
                     this.style.transform = 'scale(1)';
-                }, 150);
+                }, 200);
             });
+            
+            // Efect de hover pe highlight numbers
+            const highlights = document.querySelectorAll('.highlight');
+            highlights.forEach(hl => {
+                hl.addEventListener('mouseenter', function() {
+                    this.style.boxShadow = '0 2px 8px rgba(220, 53, 69, 0.3)';
+                });
+                hl.addEventListener('mouseleave', function() {
+                    this.style.boxShadow = 'none';
+                });
+            });
+        });
+        
+        // Schimbare usoara a culorii de fundal la scroll
+        window.addEventListener('scroll', function() {
+            const scrolled = window.pageYOffset;
+            const rate = scrolled * -0.5;
+            document.body.style.backgroundPosition = '0px ' + rate + 'px';
         });
     </script>
 </body>
